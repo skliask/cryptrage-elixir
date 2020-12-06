@@ -1,0 +1,28 @@
+<h1>Show Pair</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pair.name %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @pair.slug %>
+  </li>
+
+  <li>
+    <strong>Asset:</strong>
+    <%= @pair.asset_id %>
+  </li>
+
+  <li>
+    <strong>Quote:</strong>
+    <%= @pair.quote %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.pair_path(@conn, :edit, @pair) %></span>
+<span><%= link "Back", to: Routes.pair_path(@conn, :index) %></span>

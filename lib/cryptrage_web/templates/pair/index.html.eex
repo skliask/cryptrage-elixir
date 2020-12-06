@@ -1,0 +1,32 @@
+<h1>Listing Pairs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Asset</th>
+      <th>Quote</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pair <- @pairs do %>
+    <tr>
+      <td><%= pair.name %></td>
+      <td><%= pair.slug %></td>
+      <td><%= pair.asset_id %></td>
+      <td><%= pair.quote %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.pair_path(@conn, :show, pair) %></span>
+        <span><%= link "Edit", to: Routes.pair_path(@conn, :edit, pair) %></span>
+        <span><%= link "Delete", to: Routes.pair_path(@conn, :delete, pair), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Pair", to: Routes.pair_path(@conn, :new) %></span>

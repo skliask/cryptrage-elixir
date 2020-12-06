@@ -1,0 +1,28 @@
+<h1>Listing Markets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for market <- @markets do %>
+    <tr>
+      <td><%= market.name %></td>
+      <td><%= market.slug %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.market_path(@conn, :show, market) %></span>
+        <span><%= link "Edit", to: Routes.market_path(@conn, :edit, market) %></span>
+        <span><%= link "Delete", to: Routes.market_path(@conn, :delete, market), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Market", to: Routes.market_path(@conn, :new) %></span>

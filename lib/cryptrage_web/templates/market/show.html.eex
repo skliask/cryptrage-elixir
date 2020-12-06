@@ -1,0 +1,18 @@
+<h1>Show Market</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @market.name %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @market.slug %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.market_path(@conn, :edit, @market) %></span>
+<span><%= link "Back", to: Routes.market_path(@conn, :index) %></span>
